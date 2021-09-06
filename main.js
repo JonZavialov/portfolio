@@ -14,3 +14,22 @@ renderer.setSize(window.innerWidth, window.innerHeight) //makes renderer full sc
 camera.position.setZ(30) //moves camera away from center
 
 renderer.render(scene, camera) //draws
+
+const geometry = new THREE.TorusGeometry(10, 3, 16, 100) //creates object in scene
+const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true}) //can be considered a "wrapping paper" for the geometry
+const torus = new THREE.Mesh(geometry, material) //combines shape and material to create the mesh
+
+scene.add(torus)
+
+function animate(){
+  //recursivley rerenders the scene
+  requestAnimationFrame(animate)
+
+  torus.rotation.x += 0.01
+  torus.rotation.y += 0.005
+  torus.rotation.z += 0.01
+
+  renderer.render(scene, camera)
+}
+
+animate()
