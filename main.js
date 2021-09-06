@@ -28,9 +28,9 @@ pointLight.position.set(5, 5, 5) //moves light away from center
 const ambientLight = new THREE.AmbientLight(0xffffff)// more like a floodlight
 scene.add(pointLight, ambientLight) //adds light to scene
 
-const lightHelper = new THREE.PointLightHelper(pointLight)// adds shape aroung light
-const gridHelper = new THREE.GridHelper(200, 50)// creates grid
-scene.add(lightHelper, gridHelper)
+//const lightHelper = new THREE.PointLightHelper(pointLight)// adds shape aroung light
+//const gridHelper = new THREE.GridHelper(200, 50)// creates grid
+//scene.add(lightHelper, gridHelper)
 
 const controls = new OrbitControls(camera, renderer.domElement) //listens to mouse controls and moves camera accordingly
 
